@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
 from base import BaseModel
-
+import pretrainedmodels
 
 class MnistModel(BaseModel):
     def __init__(self, num_classes=10):

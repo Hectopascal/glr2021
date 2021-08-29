@@ -1,42 +1,7 @@
-# PyTorch Template Project
-PyTorch deep learning project made easy.
+# Landmark Recognition Project
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+This repository contains the code for my submission to the GLR2021 competition on Kaggle.
 
-<!-- code_chunk_output -->
-
-* [PyTorch Template Project](#pytorch-template-project)
-	* [Requirements](#requirements)
-	* [Features](#features)
-	* [Folder Structure](#folder-structure)
-	* [Usage](#usage)
-		* [Config file format](#config-file-format)
-		* [Using config files](#using-config-files)
-		* [Resuming from checkpoints](#resuming-from-checkpoints)
-    * [Using Multiple GPU](#using-multiple-gpu)
-	* [Customization](#customization)
-		* [Custom CLI options](#custom-cli-options)
-		* [Data Loader](#data-loader)
-		* [Trainer](#trainer)
-		* [Model](#model)
-		* [Loss](#loss)
-		* [metrics](#metrics)
-		* [Additional logging](#additional-logging)
-		* [Validation data](#validation-data)
-		* [Checkpoints](#checkpoints)
-    * [Tensorboard Visualization](#tensorboard-visualization)
-	* [Contribution](#contribution)
-	* [TODOs](#todos)
-	* [License](#license)
-	* [Acknowledgements](#acknowledgements)
-
-<!-- /code_chunk_output -->
-
-## Requirements
-* Python >= 3.5 (3.6 recommended)
-* PyTorch >= 0.4 (1.2 recommended)
-* tqdm (Optional for `test.py`)
-* tensorboard >= 1.14 (see [Tensorboard Visualization](#tensorboard-visualization))
 
 ## Features
 * Clear folder structure which is suitable for many deep learning projects.
@@ -355,24 +320,5 @@ If you need more visualizations, use `add_scalar('tag', data)`, `add_image('tag'
 
 **Note**: You don't have to specify current steps, since `WriterTensorboard` class defined at `logger/visualization.py` will track current steps.
 
-## Contribution
-Feel free to contribute any kind of function or enhancement, here the coding style follows PEP8
-
-Code should pass the [Flake8](http://flake8.pycqa.org/en/latest/) check before committing.
-
-## TODOs
-
-- [ ] Multiple optimizers
-- [ ] Support more tensorboard functions
-- [x] Using fixed random seed
-- [x] Support pytorch native tensorboard
-- [x] `tensorboardX` logger support
-- [x] Configurable logging layout, checkpoint naming
-- [x] Iteration-based training (instead of epoch-based)
-- [x] Adding command line option for fine-tuning
-
-## License
-This project is licensed under the MIT License. See  LICENSE for more details
-
 ## Acknowledgements
-This project is inspired by the project [Tensorflow-Project-Template](https://github.com/MrGemy95/Tensorflow-Project-Template) by [Mahmoud Gemy](https://github.com/MrGemy95)
+Project repository template adapted from the Pytorch Template Project.
