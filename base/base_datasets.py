@@ -9,7 +9,7 @@ from torchvision import transforms, utils
 class LandmarksDataset(Dataset):
     """Face Landmarks dataset."""
 
-    def __init__(self, csv_file, root_dir, transform=None):
+    def __init__(self, csv_file, root_dir, transform=None, train=True):
         """
         Args:
             csv_file (string): Path to the csv file with annotations.
@@ -21,6 +21,7 @@ class LandmarksDataset(Dataset):
         self.labels = pd.read_csv(csv_file)
         self.root_dir = root_dir
         self.transform = transform
+        self.train = train
 
     def __len__(self):
         return len(self.labels)
@@ -28,7 +29,7 @@ class LandmarksDataset(Dataset):
     def __getitem__(self, idx):
         if torch.is_tensor(idx):
             idx = idx.tolist()
-        label = self.img_labels.iloc[idx, 1]
+        label = self.labels.iloc[idx, 1]
         img_name = os.path.join(self.root_dir, self.labels.iloc[idx, 0])
         image = Image.open(img_name).convert("RGB")
         if self.transform:

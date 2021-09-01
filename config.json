@@ -1,15 +1,15 @@
 {
-    "name": "Mnist_LeNet",
+    "name": "GLR",
     "n_gpu": 1,
 
     "arch": {
-        "type": "MnistModel",
+        "type": "GLRModel",
         "args": {}
     },
     "data_loader": {
-        "type": "MnistDataLoader",
+        "type": "LandmarkDataLoader",
         "args":{
-            "data_dir": "data/",
+            "data_dir": "/mnt/c/Users/Yan/PycharmProjects/glr-data/",
             "batch_size": 128,
             "shuffle": true,
             "validation_split": 0.1,

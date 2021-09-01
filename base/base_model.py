@@ -1,7 +1,6 @@
 import torch.nn as nn
 import numpy as np
 from abc import abstractmethod
-import pretrainedmodels
 
 
 class BaseModel(nn.Module):
