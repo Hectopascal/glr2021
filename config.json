@@ -9,7 +9,7 @@
     "data_loader": {
         "type": "LandmarkDataLoader",
         "args":{
-            "data_dir": "/mnt/c/Users/Yan/PycharmProjects/glr-data/",
+            "data_dir": "C:\\Users\\Yan\\PycharmProjects\\glr-data\\",
             "batch_size": 128,
             "shuffle": true,
             "validation_split": 0.1,

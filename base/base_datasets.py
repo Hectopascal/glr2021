@@ -7,9 +7,9 @@ from torchvision import transforms, utils
 
 
 class LandmarksDataset(Dataset):
-    """Face Landmarks dataset."""
+    """Landmarks dataset."""
 
-    def __init__(self, csv_file, root_dir, transform=None, train=True):
+    def __init__(self, csv_file, root_dir, transform=None, train="train"):
         """
         Args:
             csv_file (string): Path to the csv file with annotations.
@@ -30,8 +30,17 @@ class LandmarksDataset(Dataset):
         if torch.is_tensor(idx):
             idx = idx.tolist()
         label = self.labels.iloc[idx, 1]
-        img_name = os.path.join(self.root_dir, self.labels.iloc[idx, 0])
-        image = Image.open(img_name).convert("RGB")
+        filename = self.labels.iloc[idx, 0]
+        img_name = os.path.join(
+            self.root_dir,
+            self.train,
+            filename[0],
+            filename[1],
+            filename[2],
+            filename + ".jpg",
+        )
+        img = Image.open(img_name).convert("RGB")
+        image = transforms.ToTensor()(img).unsqueeze_(0)
         if self.transform:
             image = self.transform(image)
 
